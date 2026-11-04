@@ -1,56 +1,44 @@
 /* =========================
-   PlainCompass Theme v2
-   Mobile First
+   PlainCompass Theme
+   Mobile-first / Light & Dark
    ========================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
-
-/* 초기 숨김 해제 */
+/* Google Font 추천
+   - Newsreader : 여행 에세이 느낌
+   - Source Serif 4 : 가독성 우수
+   - Inter : 본문 보조
+*/
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 html{
     visibility:visible !important;
 }
 
-/* =========================
-   Color System
-   ========================= */
 
 :root{
+  --bg:#f8f7f3;
+  --card:#ffffff;
+  --text:#262626;
+  --sub:#767676;
+  --line:#e5e5e5;
+  --accent:#73624f;
 
-    --bg:#f5f4ef;
-    --surface:#ffffff;
+  --radius:18px;
+  --shadow:0 8px 24px rgba(0,0,0,.06);
 
-    --text:#1d1d1d;
-    --text-soft:#6f7174;
-
-    --border:#dfdfdf;
-    --accent:#73624f;
-
-    --radius:20px;
-
-    --content-width:780px;
-
-    --shadow:
-        0 10px 30px rgba(0,0,0,.05);
-
+  --content-width:680px;
 }
 
-/* 다크모드 */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#131416;
+    --card:#1b1d20;
+    --text:#ececec;
+    --sub:#9ea3aa;
+    --line:#2b2f34;
+    --accent:#c9b08b;
 
-@media (prefers-color-scheme:dark){
-
-    :root{
-
-        --bg:#0f1113;
-        --surface:#181b1f;
-
-        --text:#f1f2f3;
-        --text-soft:#aeb4bc;
-
-        --border:#292d32;
-        --accent:#cfb289;
-
-        --shadow:none;
-    }
+    --shadow:none;
+  }
 }
 
 /* =========================
@@ -58,37 +46,43 @@ html{
    ========================= */
 
 *{
-    box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    margin:0;
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.8;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter', sans-serif;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
 }
 
 a{
-    text-decoration:none;
+  color:var(--accent);
+  text-decoration:none;
+}
+
+a:hover{
+  opacity:.85;
 }
 
 img{
-    max-width:100%;
-    display:block;
+  max-width:100%;
+  display:block;
 }
 
 /* =========================
-   Blogger 제거
+   Navbar 제거
    ========================= */
 
-#navbar-iframe,
-#navbar-iframe-container{
-    display:none !important;
+#navbar-iframe-container,
+#navbar-iframe{
+  display:none !important;
 }
 
 /* =========================
@@ -96,17 +90,19 @@ img{
    ========================= */
 
 #content{
-
-    width:100%;
-    max-width:var(--content-width);
-
-    margin:0 auto;
-    padding:24px 18px 80px;
+  width:100%;
+  max-width:var(--content-width);
+  margin:0 auto;
+  padding:20px 16px 80px;
 }
 
-#main,
+#main{
+  width:100%;
+}
+
 #sidebar{
-    width:100%;
+  width:100%;
+  margin-top:40px;
 }
 
 /* =========================
@@ -114,134 +110,91 @@ img{
    ========================= */
 
 #header{
-
-    padding:30px 0 40px;
-    margin-bottom:40px;
-
-    text-align:center;
-
-    border-bottom:1px solid var(--border);
+  text-align:center;
+  padding:30px 0 40px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:32px;
 }
 
 #blog-title{
-
-    font-family:'Newsreader',serif;
-
-    font-size:28px;
-    font-weight:700;
-
-    margin:0;
-}
-
-#blog-title a{
-    color:var(--text);
+  font-family:'Newsreader', serif;
+  font-size:23px;
+  font-weight:600;
+  letter-spacing:.4px;
+  margin:0;
 }
 
 #description{
-
-    margin-top:12px;
-
-    color:var(--text-soft);
-
-    font-size:15px;
-    line-height:1.7;
-
-    max-width:560px;
-    margin-left:auto;
-    margin-right:auto;
+  color:var(--sub);
+  font-size:14px;
+  margin-top:10px;
+  max-width:500px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 /* =========================
-   Date Header
-   ========================= */
-
-.date-header{
-
-    margin:24px 0 14px;
-
-    color:var(--text-soft);
-
-    font-size:12px;
-    font-weight:600;
-
-    letter-spacing:1px;
-    text-transform:uppercase;
-}
-
-/* =========================
-   Card
+   Post Card
    ========================= */
 
 .post{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+  margin-bottom:24px;
+  box-shadow:var(--shadow);
+}
 
-    background:var(--surface);
-
-    border:1px solid var(--border);
-    border-radius:24px;
-
-    padding:28px;
-
-    margin-bottom:24px;
-
-    box-shadow:var(--shadow);
+.date-header{
+  color:var(--sub);
+  font-size:13px;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:32px 0 12px;
 }
 
 .post-title{
-
-    margin:0 0 18px;
-
-    font-family:'Newsreader',serif;
-
-    font-size:32px;
-    line-height:1.25;
-
-    font-weight:700;
-}
-
-.post-title a{
-    color:var(--text);
+  font-family:'Newsreader', serif;
+  font-size:22px;
+  line-height:1.35;
+  font-weight:600;
+  margin:0 0 18px;
 }
 
 .post-body{
-
-    font-size:16px;
-
-    color:var(--text);
-}
-
-.post-body p{
-    margin:0 0 18px;
+  font-size:15px;
 }
 
 .post-body h2{
-
-    margin:36px 0 12px;
-
-    font-family:'Newsreader',serif;
-    font-size:24px;
+  font-family:'Newsreader', serif;
+  font-size:20px;
+  margin-top:34px;
+  margin-bottom:12px;
 }
 
 .post-body h3{
+  font-size:18px;
+  margin-top:26px;
+  margin-bottom:10px;
+}
 
-    margin:28px 0 10px;
-
-    font-size:18px;
+.post-body p{
+  margin:0 0 16px;
 }
 
 .post-body ul,
 .post-body ol{
-    padding-left:24px;
+  padding-left:20px;
 }
 
 .post-footer{
-
-    margin-top:28px;
-    padding-top:18px;
-
-    border-top:1px solid var(--border);
-
-    color:var(--text-soft);
-    font-size:13px;
+  margin-top:24px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:var(--sub);
+  font-size:13px;
 }
 
 /* =========================
@@ -249,211 +202,81 @@ img{
    ========================= */
 
 table{
-
-    width:100%;
-    margin:24px 0;
-
-    border-collapse:collapse;
-
-    background:var(--surface);
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-    display:block;
-    overflow-x:auto;
+  width:100%;
+  border-collapse:collapse;
+  margin:24px 0;
+  overflow:hidden;
+  border-radius:12px;
 }
 
 th{
-
-    background:var(--accent);
-
-    color:#fff;
-
-    padding:14px;
-
-    text-align:left;
+  background:var(--accent);
+  color:#fff;
+  padding:12px;
+  text-align:left;
+  font-size:14px;
 }
 
 td{
+  border-bottom:1px solid var(--line);
+  padding:12px;
+  font-size:14px;
+}
 
-    padding:14px;
-
-    border-top:1px solid var(--border);
-
-    background:var(--surface);
+@media (prefers-color-scheme: dark){
+  th{
+    color:#111;
+  }
 }
 
 /* =========================
    Labels
    ========================= */
 
+.blogger-labels{
+  margin-top:20px;
+}
+
 .blogger-labels a{
-
-    display:inline-flex;
-    align-items:center;
-
-    margin:4px;
-
-    padding:7px 12px;
-
-    border-radius:999px;
-
-    background:rgba(115,98,79,.12);
-
-    color:var(--accent);
-
-    font-size:12px;
-    font-weight:600;
+  display:inline-block;
+  margin:4px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(115,98,79,.1);
+  font-size:12px;
 }
 
 /* =========================
    Sidebar
    ========================= */
 
-#sidebar{
-    margin-top:34px;
-}
-
+#sidebar .box,
 #profile-container{
-    display:none;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  margin-bottom:20px;
 }
-
-#powered-by,
-#blogfeeds,
-.archive-list{
-    display:none !important;
-}
-
-/* Links 영역 제거 */
-
-.box ul:first-of-type{
-    display:none;
-}
-
-/* Links / Archives 제목 제거 */
 
 .sidebar-title{
-    display:none;
+  font-family:'Newsreader', serif;
+  font-size:18px;
+  margin:0 0 14px;
 }
 
-/* =========================
-   Previous Posts
-   ========================= */
-
-#recently{
-
-    display:flex;
-    flex-direction:column;
-
-    gap:12px;
-
-    counter-reset:num;
-
-    background:var(--surface);
-
-    border:1px solid var(--border);
-
-    border-radius:24px;
-
-    padding:24px;
-
-    box-shadow:var(--shadow);
+#sidebar ul{
+  list-style:none;
+  padding:0;
+  margin:0;
 }
 
-#recently::before{
-
-    content:"Previous Posts";
-
-    display:block;
-
-    font-family:'Newsreader',serif;
-
-    font-size:22px;
-    font-weight:700;
-
-    color:var(--text);
-
-    padding-bottom:14px;
-
-    border-bottom:1px solid var(--border);
-
-    margin-bottom:8px;
+#sidebar li{
+  margin-bottom:10px;
 }
 
-#recently li{
-
-    list-style:none;
-
-    margin:0;
-
-    counter-increment:num;
-}
-
-#recently li a{
-
-    display:flex;
-    align-items:center;
-
-    gap:14px;
-
-    min-height:70px;
-
-    padding:14px 16px;
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    background:var(--surface);
-
-    color:var(--text);
-
-    transition:.2s;
-}
-
-#recently li a::before{
-
-    content:counter(num);
-
-    width:34px;
-    height:34px;
-
-    flex-shrink:0;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:var(--accent);
-
-    color:#fff;
-
-    font-size:12px;
-    font-weight:700;
-}
-
-#recently li a::after{
-
-    content:"›";
-
-    margin-left:auto;
-
-    color:var(--text-soft);
-
-    font-size:18px;
-}
-
-#recently li a:hover{
-
-    border-color:var(--accent);
-
-    transform:translateY(-2px);
+#sidebar a{
+  color:var(--text);
 }
 
 /* =========================
@@ -461,125 +284,206 @@ td{
    ========================= */
 
 #footer{
-
-    text-align:center;
-
-    color:var(--text-soft);
-
-    padding:50px 0 30px;
+  color:var(--sub);
+  text-align:center;
+  font-size:13px;
+  padding:40px 0;
 }
 
 #footer hr{
-
-    border:none;
-    border-top:1px solid var(--border);
-
-    margin-bottom:24px;
+  border:none;
+  border-top:1px solid var(--line);
+  margin-bottom:24px;
 }
 
 /* =========================
-   Mobile
+   Mobile Optimization
    ========================= */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-    #content{
-        padding:14px;
-    }
+  #content{
+    padding:16px;
+  }
 
-    #header{
+  .post{
+    padding:20px;
+    border-radius:16px;
+  }
 
-        padding-top:20px;
-        padding-bottom:28px;
+  .post-title{
+    font-size:21px;
+  }
 
-        margin-bottom:28px;
-    }
+  .post-body{
+    font-size:15px;
+  }
 
-    #blog-title{
-        font-size:24px;
-    }
-
-    #description{
-        font-size:14px;
-    }
-
-    .post{
-
-        padding:18px;
-
-        border-radius:18px;
-    }
-
-    .post-title{
-
-        font-size:24px;
-        line-height:1.3;
-    }
-
-    .post-body{
-
-        font-size:15px;
-    }
-
-    .post-body h2{
-
-        font-size:20px;
-    }
-
-    .post-body h3{
-
-        font-size:17px;
-    }
-
-    #recently{
-
-        padding:18px;
-        border-radius:18px;
-    }
-
-    #recently::before{
-        font-size:20px;
-    }
-
-    #recently li a{
-
-        padding:14px;
-
-        min-height:auto;
-
-        align-items:flex-start;
-
-        font-size:14px;
-        line-height:1.5;
-    }
-
-    th,
-    td{
-
-        min-width:160px;
-    }
+  table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
 }
 
 /* =========================
    Desktop
    ========================= */
 
-@media(min-width:1024px){
+@media (min-width:1024px){
 
-    #content{
-        max-width:860px;
-    }
+  #content{
+    max-width:720px;
+  }
 
-    .post-title{
-        font-size:36px;
-    }
+  .post{
+    padding:28px;
+  }
+}
 
-    .post{
-        padding:36px;
-    }
 
-    #recently{
-        max-width:720px;
-        margin:0 auto;
-    }
+/* =========================
+   Previous Posts
+   ========================= */
+
+#recently{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#recently li{
+    list-style:none;
+    margin:0;
+}
+
+#recently li a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    color:var(--text);
+    transition:.25s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+#recently li a:hover{
+    transform:translateY(-2px);
+    border-color:var(--accent);
+    background:rgba(115,98,79,.06);
+}
+
+/* 번호 */
+
+#recently{
+    counter-reset:postcount;
+}
+
+#recently li{
+    counter-increment:postcount;
+}
+
+#recently li a::before{
+    content:counter(postcount);
+    flex-shrink:0;
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+/* 제목 */
+
+#recently li a{
+    font-size:14px;
+    line-height:1.5;
+    font-weight:500;
+}
+
+/* 타이틀 */
+
+.sidebar-title{
+    position:relative;
+    padding-bottom:10px;
+}
+
+.sidebar-title::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:40px;
+    height:2px;
+    background:var(--accent);
+    border-radius:99px;
+}
+
+
+/* =========================
+   Sidebar : Previous Posts만 표시
+   ========================= */
+
+/* About Me 숨김 */
+#profile-container{
+    display:none;
+}
+
+/* Links 숨김 */
+.sidebar-title + ul{
+    display:none;
+}
+
+/* Archives 숨김 */
+.archive-list{
+    display:none;
+}
+
+/* Subscribe 숨김 */
+#blogfeeds{
+    display:none;
+}
+
+/* Powered by Blogger 숨김 */
+#powered-by{
+    display:none;
+}
+
+/* Previous Posts 외 타이틀 숨김 */
+.sidebar-title{
+    display:none;
+}
+
+/* Previous Posts 타이틀만 표시 */
+#recently{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#recently::before{
+    content:"Previous Posts";
+    display:block;
+
+    font-family:'Newsreader', serif;
+    font-size:18px;
+    font-weight:600;
+
+    margin-bottom:12px;
+    padding-bottom:10px;
+
+    border-bottom:1px solid var(--line);
 }
