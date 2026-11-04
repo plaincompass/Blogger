@@ -9,12 +9,9 @@
    - Inter : 본문 보조
 */
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
-
 html{
-    opacity:1;
-    transition:opacity .2s;
+    visibility:visible !important;
 }
-
 
 
 :root{
