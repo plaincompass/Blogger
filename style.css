@@ -1,18 +1,14 @@
-/* =========================
-   PlainCompass Theme v2
-   Mobile First
-   ========================= */
+/* ==================================================
+   PlainCompass Theme v3
+   100% Responsive / Mobile First
+   ================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
-/* 초기 숨김 해제 */
 html{
     visibility:visible !important;
+    scroll-behavior:smooth;
 }
-
-/* =========================
-   Color System
-   ========================= */
 
 :root{
 
@@ -25,16 +21,19 @@ html{
     --border:#dfdfdf;
     --accent:#73624f;
 
-    --radius:20px;
+    --radius:4vw;
 
-    --content-width:780px;
+    --space-xs:1vw;
+    --space-sm:2vw;
+    --space-md:4vw;
+    --space-lg:6vw;
+    --space-xl:8vw;
+
+    --content-width:92vw;
 
     --shadow:
-        0 10px 30px rgba(0,0,0,.05);
-
+        0 1vw 3vw rgba(0,0,0,.05);
 }
-
-/* 다크모드 */
 
 @media (prefers-color-scheme:dark){
 
@@ -44,93 +43,104 @@ html{
         --surface:#181b1f;
 
         --text:#f1f2f3;
-        --text-soft:#aeb4bc;
+        --text-soft:#b2b7bf;
 
-        --border:#292d32;
+        --border:#2a2e34;
         --accent:#cfb289;
 
         --shadow:none;
     }
 }
 
-/* =========================
-   Reset
-   ========================= */
+/* ==================================================
+   RESET
+   ================================================== */
 
 *{
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
+
     margin:0;
-    font-family:'Inter',sans-serif;
+
     background:var(--bg);
+
     color:var(--text);
+
+    font-family:'Inter',sans-serif;
+
     line-height:1.8;
 }
 
-a{
-    text-decoration:none;
-}
-
 img{
+
     max-width:100%;
+
     display:block;
 }
 
-/* =========================
-   Blogger 제거
-   ========================= */
+a{
+
+    color:var(--accent);
+
+    text-decoration:none;
+}
+
+/* ==================================================
+   BLOGGER
+   ================================================== */
 
 #navbar-iframe,
 #navbar-iframe-container{
     display:none !important;
 }
 
-/* =========================
-   Layout
-   ========================= */
+/* ==================================================
+   LAYOUT
+   ================================================== */
 
 #content{
 
-    width:100%;
-    max-width:var(--content-width);
+    width:var(--content-width);
 
-    margin:0 auto;
-    padding:24px 18px 80px;
+    margin:auto;
+
+    padding:4vw;
 }
 
 #main,
 #sidebar{
+
     width:100%;
 }
 
-/* =========================
-   Header
-   ========================= */
+/* ==================================================
+   HEADER
+   ================================================== */
 
 #header{
 
-    padding:30px 0 40px;
-    margin-bottom:40px;
-
     text-align:center;
 
-    border-bottom:1px solid var(--border);
+    padding:6vw 0;
+
+    margin-bottom:6vw;
+
+    border-bottom:.3vw solid var(--border);
 }
 
 #blog-title{
 
+    margin:0;
+
     font-family:'Newsreader',serif;
 
-    font-size:28px;
+    font-size:7vw;
+
     font-weight:700;
 
-    margin:0;
+    line-height:1.2;
 }
 
 #blog-title a{
@@ -139,132 +149,140 @@ img{
 
 #description{
 
-    margin-top:12px;
+    margin-top:2vw;
 
     color:var(--text-soft);
 
-    font-size:15px;
-    line-height:1.7;
+    font-size:3.5vw;
 
-    max-width:560px;
+    max-width:90%;
+
     margin-left:auto;
     margin-right:auto;
 }
 
-/* =========================
-   Date Header
-   ========================= */
+/* ==================================================
+   DATE
+   ================================================== */
 
 .date-header{
 
-    margin:24px 0 14px;
+    margin:4vw 0;
 
     color:var(--text-soft);
 
-    font-size:12px;
-    font-weight:600;
+    font-size:2.8vw;
 
-    letter-spacing:1px;
+    letter-spacing:.3vw;
+
     text-transform:uppercase;
 }
 
-/* =========================
-   Card
-   ========================= */
+/* ==================================================
+   POST
+   ================================================== */
 
 .post{
 
     background:var(--surface);
 
-    border:1px solid var(--border);
-    border-radius:24px;
+    border:.3vw solid var(--border);
 
-    padding:28px;
+    border-radius:var(--radius);
 
-    margin-bottom:24px;
+    padding:5vw;
+
+    margin-bottom:5vw;
 
     box-shadow:var(--shadow);
 }
 
 .post-title{
 
-    margin:0 0 18px;
+    margin:0 0 3vw;
 
     font-family:'Newsreader',serif;
 
-    font-size:32px;
-    line-height:1.25;
+    font-size:6.5vw;
 
-    font-weight:700;
+    line-height:1.25;
 }
 
 .post-title a{
+
     color:var(--text);
 }
 
 .post-body{
 
-    font-size:16px;
-
-    color:var(--text);
+    font-size:4vw;
 }
 
 .post-body p{
-    margin:0 0 18px;
+
+    margin-bottom:4vw;
 }
 
 .post-body h2{
 
-    margin:36px 0 12px;
-
     font-family:'Newsreader',serif;
-    font-size:24px;
+
+    font-size:5.5vw;
+
+    margin-top:8vw;
+
+    margin-bottom:3vw;
 }
 
 .post-body h3{
 
-    margin:28px 0 10px;
+    font-size:4.6vw;
 
-    font-size:18px;
+    margin-top:6vw;
+
+    margin-bottom:2vw;
 }
 
 .post-body ul,
 .post-body ol{
-    padding-left:24px;
+
+    padding-left:6vw;
 }
 
 .post-footer{
 
-    margin-top:28px;
-    padding-top:18px;
+    margin-top:5vw;
 
-    border-top:1px solid var(--border);
+    padding-top:4vw;
+
+    border-top:.3vw solid var(--border);
+
+    font-size:3vw;
 
     color:var(--text-soft);
-    font-size:13px;
 }
 
-/* =========================
-   Table
-   ========================= */
+/* ==================================================
+   TABLE
+   ================================================== */
 
 table{
 
     width:100%;
-    margin:24px 0;
+
+    display:block;
+
+    overflow-x:auto;
 
     border-collapse:collapse;
 
+    margin:5vw 0;
+
     background:var(--surface);
 
-    border:1px solid var(--border);
+    border:.3vw solid var(--border);
 
-    border-radius:16px;
-
-    overflow:hidden;
-
-    display:block;
-    overflow-x:auto;
+    border-radius:3vw;
 }
 
 th{
@@ -273,160 +291,141 @@ th{
 
     color:#fff;
 
-    padding:14px;
+    padding:3vw;
 
     text-align:left;
 }
 
 td{
 
-    padding:14px;
+    padding:3vw;
 
-    border-top:1px solid var(--border);
+    border-top:.3vw solid var(--border);
 
-    background:var(--surface);
+    min-width:35vw;
 }
 
-/* =========================
-   Labels
-   ========================= */
+/* ==================================================
+   LABELS
+   ================================================== */
 
 .blogger-labels a{
 
-    display:inline-flex;
-    align-items:center;
+    display:inline-block;
 
-    margin:4px;
+    margin:1vw;
 
-    padding:7px 12px;
+    padding:1.5vw 3vw;
 
-    border-radius:999px;
+    border-radius:999vw;
 
     background:rgba(115,98,79,.12);
 
-    color:var(--accent);
-
-    font-size:12px;
-    font-weight:600;
+    font-size:3vw;
 }
 
-/* =========================
-   Sidebar
-   ========================= */
+/* ==================================================
+   SIDEBAR
+   ================================================== */
 
 #sidebar{
-    margin-top:34px;
+
+    margin-top:6vw;
 }
 
-#profile-container{
-    display:none;
-}
-
+#profile-container,
 #powered-by,
 #blogfeeds,
 .archive-list{
+
     display:none !important;
 }
-
-/* Links 영역 제거 */
 
 .box ul:first-of-type{
     display:none;
 }
 
-/* Links / Archives 제목 제거 */
-
 .sidebar-title{
     display:none;
 }
 
-/* =========================
-   Previous Posts
-   ========================= */
+/* ==================================================
+   PREVIOUS POSTS
+   ================================================== */
 
 #recently{
 
     display:flex;
+
     flex-direction:column;
 
-    gap:12px;
+    gap:3vw;
 
-    counter-reset:num;
+    padding:5vw;
 
     background:var(--surface);
 
-    border:1px solid var(--border);
+    border:.3vw solid var(--border);
 
-    border-radius:24px;
+    border-radius:var(--radius);
 
-    padding:24px;
-
-    box-shadow:var(--shadow);
+    counter-reset:post;
 }
 
 #recently::before{
 
     content:"Previous Posts";
 
-    display:block;
-
     font-family:'Newsreader',serif;
 
-    font-size:22px;
+    font-size:5vw;
+
     font-weight:700;
 
-    color:var(--text);
+    padding-bottom:3vw;
 
-    padding-bottom:14px;
-
-    border-bottom:1px solid var(--border);
-
-    margin-bottom:8px;
+    border-bottom:.3vw solid var(--border);
 }
 
 #recently li{
 
     list-style:none;
 
-    margin:0;
-
-    counter-increment:num;
+    counter-increment:post;
 }
 
 #recently li a{
 
     display:flex;
+
     align-items:center;
 
-    gap:14px;
+    gap:3vw;
 
-    min-height:70px;
+    padding:3vw;
 
-    padding:14px 16px;
+    border:.3vw solid var(--border);
 
-    border:1px solid var(--border);
-
-    border-radius:16px;
+    border-radius:3vw;
 
     background:var(--surface);
 
     color:var(--text);
-
-    transition:.2s;
 }
 
 #recently li a::before{
 
-    content:counter(num);
+    content:counter(post);
 
-    width:34px;
-    height:34px;
-
-    flex-shrink:0;
+    width:8vw;
+    height:8vw;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
+
+    flex-shrink:0;
 
     border-radius:50%;
 
@@ -434,8 +433,7 @@ td{
 
     color:#fff;
 
-    font-size:12px;
-    font-weight:700;
+    font-size:3vw;
 }
 
 #recently li a::after{
@@ -444,21 +442,14 @@ td{
 
     margin-left:auto;
 
+    font-size:4vw;
+
     color:var(--text-soft);
-
-    font-size:18px;
 }
 
-#recently li a:hover{
-
-    border-color:var(--accent);
-
-    transform:translateY(-2px);
-}
-
-/* =========================
-   Footer
-   ========================= */
+/* ==================================================
+   FOOTER
+   ================================================== */
 
 #footer{
 
@@ -466,120 +457,54 @@ td{
 
     color:var(--text-soft);
 
-    padding:50px 0 30px;
+    padding:8vw 0;
 }
 
 #footer hr{
 
     border:none;
-    border-top:1px solid var(--border);
 
-    margin-bottom:24px;
+    border-top:.3vw solid var(--border);
+
+    margin-bottom:4vw;
 }
 
-/* =========================
-   Mobile
-   ========================= */
+/* ==================================================
+   LARGE SCREEN
+   ================================================== */
 
-@media(max-width:768px){
+@media (min-width:1024px){
 
     #content{
-        padding:14px;
-    }
-
-    #header{
-
-        padding-top:20px;
-        padding-bottom:28px;
-
-        margin-bottom:28px;
+        width:70vw;
+        max-width:70vw;
     }
 
     #blog-title{
-        font-size:24px;
+        font-size:3vw;
     }
 
     #description{
-        font-size:14px;
-    }
-
-    .post{
-
-        padding:18px;
-
-        border-radius:18px;
+        font-size:1.1vw;
     }
 
     .post-title{
-
-        font-size:24px;
-        line-height:1.3;
+        font-size:2.4vw;
     }
 
     .post-body{
-
-        font-size:15px;
+        font-size:1.05vw;
     }
 
     .post-body h2{
-
-        font-size:20px;
+        font-size:1.8vw;
     }
 
     .post-body h3{
-
-        font-size:17px;
-    }
-
-    #recently{
-
-        padding:18px;
-        border-radius:18px;
+        font-size:1.4vw;
     }
 
     #recently::before{
-        font-size:20px;
-    }
-
-    #recently li a{
-
-        padding:14px;
-
-        min-height:auto;
-
-        align-items:flex-start;
-
-        font-size:14px;
-        line-height:1.5;
-    }
-
-    th,
-    td{
-
-        min-width:160px;
-    }
-}
-
-/* =========================
-   Desktop
-   ========================= */
-
-@media(min-width:1024px){
-
-    #content{
-        max-width:860px;
-    }
-
-    .post-title{
-        font-size:36px;
-    }
-
-    .post{
-        padding:36px;
-    }
-
-    #recently{
-        max-width:720px;
-        margin:0 auto;
+        font-size:1.7vw;
     }
 }
