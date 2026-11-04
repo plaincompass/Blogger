@@ -1,339 +1,485 @@
- :root {
-    /* Monet-like light mode */
-    --bg: #f3efe8;
-    --bg-2: #e7ddcf;
-    --panel: rgba(255, 255, 255, 0.42);
-    --panel-strong: #f8f3ese;
-    --text: #2d2a28;
-    --muted: #6f675f;
-    --border: rgba(75, 62, 50, 0.14);
-    --shadow: rgba(54, 42, 33, 0.12);
-    --sky: #dfeaf5;
-    --water: #bfd8e8;
-    --sage: #b7c9b0;
-    --lavender: #d9cfe7;
-    --ochre: #d7b66a;
-    --terracotta: #bf7b5b;
-    --rose: #d9a7a1;
-    --gold: #ead3a1;
+/* =========================
+   PlainCompass Theme
+   Mobile-first / Light & Dark
+   ========================= */
 
-    --link: #4b5e6f;
-    --link-hover: #2e3f4d;
+/* Google Font 추천
+   - Newsreader : 여행 에세이 느낌
+   - Source Serif 4 : 가독성 우수
+   - Inter : 본문 보조
+*/
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 
-    --button-bg: #f8f0e5;
-    --button-text: #2d2a28;
-    --button-border: rgba(77, 66, 59, 0.18);
+:root{
+  --bg:#f8f7f3;
+  --card:#ffffff;
+  --text:#262626;
+  --sub:#767676;
+  --line:#e5e5e5;
+  --accent:#73624f;
 
-    --post-bg: rgba(255, 255, 255, 0.28);
-    --post-text: #2d2a28;
-    --heading: #2d2a28;
+  --radius:18px;
+  --shadow:0 8px 24px rgba(0,0,0,.06);
+
+  --content-width:680px;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#131416;
+    --card:#1b1d20;
+    --text:#ececec;
+    --sub:#9ea3aa;
+    --line:#2b2f34;
+    --accent:#c9b08b;
+
+    --shadow:none;
+  }
+}
+
+/* =========================
+   Reset
+   ========================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter', sans-serif;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+a:hover{
+  opacity:.85;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* =========================
+   Navbar 제거
+   ========================= */
+
+#navbar-iframe-container,
+#navbar-iframe{
+  display:none !important;
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+#content{
+  width:100%;
+  max-width:var(--content-width);
+  margin:0 auto;
+  padding:20px 16px 80px;
+}
+
+#main{
+  width:100%;
+}
+
+#sidebar{
+  width:100%;
+  margin-top:40px;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+#header{
+  text-align:center;
+  padding:30px 0 40px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:32px;
+}
+
+#blog-title{
+  font-family:'Newsreader', serif;
+  font-size:23px;
+  font-weight:600;
+  letter-spacing:.4px;
+  margin:0;
+}
+
+#description{
+  color:var(--sub);
+  font-size:14px;
+  margin-top:10px;
+  max-width:500px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+   Post Card
+   ========================= */
+
+.post{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+  margin-bottom:24px;
+  box-shadow:var(--shadow);
+}
+
+.date-header{
+  color:var(--sub);
+  font-size:13px;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin:32px 0 12px;
+}
+
+.post-title{
+  font-family:'Newsreader', serif;
+  font-size:22px;
+  line-height:1.35;
+  font-weight:600;
+  margin:0 0 18px;
+}
+
+.post-body{
+  font-size:15px;
+}
+
+.post-body h2{
+  font-family:'Newsreader', serif;
+  font-size:20px;
+  margin-top:34px;
+  margin-bottom:12px;
+}
+
+.post-body h3{
+  font-size:18px;
+  margin-top:26px;
+  margin-bottom:10px;
+}
+
+.post-body p{
+  margin:0 0 16px;
+}
+
+.post-body ul,
+.post-body ol{
+  padding-left:20px;
+}
+
+.post-footer{
+  margin-top:24px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:var(--sub);
+  font-size:13px;
+}
+
+/* =========================
+   Table
+   ========================= */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin:24px 0;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+th{
+  background:var(--accent);
+  color:#fff;
+  padding:12px;
+  text-align:left;
+  font-size:14px;
+}
+
+td{
+  border-bottom:1px solid var(--line);
+  padding:12px;
+  font-size:14px;
+}
+
+@media (prefers-color-scheme: dark){
+  th{
+    color:#111;
+  }
+}
+
+/* =========================
+   Labels
+   ========================= */
+
+.blogger-labels{
+  margin-top:20px;
+}
+
+.blogger-labels a{
+  display:inline-block;
+  margin:4px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(115,98,79,.1);
+  font-size:12px;
+}
+
+/* =========================
+   Sidebar
+   ========================= */
+
+#sidebar .box,
+#profile-container{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  margin-bottom:20px;
+}
+
+.sidebar-title{
+  font-family:'Newsreader', serif;
+  font-size:18px;
+  margin:0 0 14px;
+}
+
+#sidebar ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+#sidebar li{
+  margin-bottom:10px;
+}
+
+#sidebar a{
+  color:var(--text);
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+#footer{
+  color:var(--sub);
+  text-align:center;
+  font-size:13px;
+  padding:40px 0;
+}
+
+#footer hr{
+  border:none;
+  border-top:1px solid var(--line);
+  margin-bottom:24px;
+}
+
+/* =========================
+   Mobile Optimization
+   ========================= */
+
+@media (max-width:768px){
+
+  #content{
+    padding:16px;
   }
 
-  html[data-theme='dark'] {
-    /* Monet-like dark mode */
-    --bg: #1d1c1a;
-    --bg-2: #2a2825;
-    --panel: rgba(39, 35, 32, 0.8);
-    --panel-strong: #312d2a;
-    --text: #efe7df;
-    --muted: #c8bfb6;
-    --border: rgba(255, 255, 255, 0.1);
-    --shadow: rgba(0, 0, 0, 0.38);
-
-    --sky: #3a4a5c;
-    --water: #355d73;
-    --sage: #607a5c;
-    --lavender: #685d7a;
-    --ochre: #b9965d;
-    --terracotta: #b56a4d;
-    --rose: #8d5d6b;
-    --gold: #c9b57d;
-
-    --link: #d9e4f1;
-    --link-hover: #f4f4f4;
-
-    --button-bg: #2b2724;
-    --button-text: #f5efe7;
-    --button-border: rgba(255, 255, 255, 0.12);
-
-    --post-bg: rgba(36, 31, 28, 0.75);
-    --post-text: #f1e7df;
-    --heading: #f4ebdf;
+  .post{
+    padding:20px;
+    border-radius:16px;
   }
 
-  /* 기본 적용 예시 */
-  body {
-    background:
-      linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-    color: orange;
+  .post-title{
+    font-size:21px;
   }
 
-  .post,
-  .widget,
-  .sidebar-container,
-  .main,
-  .page_body {
-    background: var(--post-bg);
-    border: 1px solid var(--border);
-    box-shadow: 0 8px 24px var(--shadow);
+  .post-body{
+    font-size:15px;
   }
 
-  a {
-    color: var(--link);
+  table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+}
+
+/* =========================
+   Desktop
+   ========================= */
+
+@media (min-width:1024px){
+
+  #content{
+    max-width:720px;
   }
 
-  a:hover {
-    color: var(--link-hover);
+  .post{
+    padding:28px;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--heading);
-  }
-
-  .post-body {
-    color: var(--post-text);
-  }
-
-  button,
-  input,
-  textarea,
-  select {
-    background: var(--button-bg);
-    color: var(--button-text);
-    border: 1px solid var(--button-border);
-  }
-
-  :root {
-    --base-size: 16px;
-    --svg-size: 10px;
-    --bg: #ffffff;
-    --text: #111111;
-    --muted: #666666;
-    --border: #eeeeee;
-    --link: #111111;
-    --surface: #ffffff;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    font: inherit;
-    vertical-align: baseline;
-    background: transparent;
-    color: inherit;
-    text-decoration: none;
-    list-style: none;
-    quotes: none;
-    box-shadow: none;
-  }
-
-  html {
-    font-size: var(--base-size);
-    background: var(--bg);
-    color: var(--text);
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    min-height: 100vh;
-  }
-
-  article,
-  aside,
-  details,
-  figcaption,
-  figure,
-  footer,
-  header,
-  hgroup,
-  main,
-  nav,
-  section,
-  summary {
-    display: block;
-  }
-
-  img,
-  svg,
-  video,
-  canvas,
-  audio,
-  iframe,
-  object,
-  embed {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border: 0;
-  }
-
-  svg,
-  svg * {
-    width: var(--svg-size);
-    height: var(--svg-size);
-    max-width: var(--svg-size);
-    max-height: var(--svg-size);
-    font-size: var(--svg-size);
-    line-height: 1;
-  }
-
-  a {
-    color: var(--link);
-    text-decoration: none;
-    background: transparent;
-  }
-
-  a:hover,
-  a:focus,
-  a:active {
-    text-decoration: none;
-  }
-
-  p,
-  h1, h2, h3, h4, h5, h6,
-  pre, code, blockquote, figure, figcaption {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  ul, ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-
-  button,
-  input,
-  textarea,
-  select {
-    margin: 0;
-    padding: 0;
-    font: inherit;
-    color: inherit;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    appearance: none;
-    -webkit-appearance: none;
-  }
-
-  button,
-  [type="button"],
-  [type="reset"],
-  [type="submit"] {
-    cursor: pointer;
-  }
-
-  strong, b {
-    font-weight: 700;
-  }
-
-  em, i {
-    font-style: italic;
-  }
-
-  hr {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    height: 0;
-    background: transparent;
-  }
-
-  .widget.Attribution,
-  .Attribution,
-  .blogger,
-  .blogger-logo,
-  .svg-icon-24.blogger-logo,
-  .image-attribution,
-  #blogger-theme-toggle {
-    display: none !important;
-  }
-
-  #outer-wrapper,
-  #main-wrapper,
-  .main,
-  .main-container,
-  .page_body,
-  .content-wrapper,
-  .Page {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-  }
-
-  .Header,
-  .Blog,
-  .widget,
-  .post-outer,
-  .post,
-  .sidebar-container,
-  .footer {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .post {
-    padding: 0;
-    margin: 0;
-  }
-
-  .post-body {
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  .post-title,
-  .post-title a {
-    margin: 0;
-    padding: 0;
-    font-size: 1.5rem;
-    line-height: 1.3;
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .sidebar-container {
-    margin: 0;
-    padding: 0;
-  }
-
-  .widget-content {
-    margin: 0;
-    padding: 0;
-  }
+}
 
 
-/* theme custom*/
-.Lfphtd{
- display:none;
+/* =========================
+   Previous Posts
+   ========================= */
+
+#recently{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#recently li{
+    list-style:none;
+    margin:0;
+}
+
+#recently li a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    color:var(--text);
+    transition:.25s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+#recently li a:hover{
+    transform:translateY(-2px);
+    border-color:var(--accent);
+    background:rgba(115,98,79,.06);
+}
+
+/* 번호 */
+
+#recently{
+    counter-reset:postcount;
+}
+
+#recently li{
+    counter-increment:postcount;
+}
+
+#recently li a::before{
+    content:counter(postcount);
+    flex-shrink:0;
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+/* 제목 */
+
+#recently li a{
+    font-size:14px;
+    line-height:1.5;
+    font-weight:500;
+}
+
+/* 타이틀 */
+
+.sidebar-title{
+    position:relative;
+    padding-bottom:10px;
+}
+
+.sidebar-title::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:40px;
+    height:2px;
+    background:var(--accent);
+    border-radius:99px;
+}
+
+
+/* =========================
+   Sidebar : Previous Posts만 표시
+   ========================= */
+
+/* About Me 숨김 */
+#profile-container{
+    display:none;
+}
+
+/* Links 숨김 */
+.sidebar-title + ul{
+    display:none;
+}
+
+/* Archives 숨김 */
+.archive-list{
+    display:none;
+}
+
+/* Subscribe 숨김 */
+#blogfeeds{
+    display:none;
+}
+
+/* Powered by Blogger 숨김 */
+#powered-by{
+    display:none;
+}
+
+/* Previous Posts 외 타이틀 숨김 */
+.sidebar-title{
+    display:none;
+}
+
+/* Previous Posts 타이틀만 표시 */
+#recently{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#recently::before{
+    content:"Previous Posts";
+    display:block;
+
+    font-family:'Newsreader', serif;
+    font-size:18px;
+    font-weight:600;
+
+    margin-bottom:12px;
+    padding-bottom:10px;
+
+    border-bottom:1px solid var(--line);
 }
