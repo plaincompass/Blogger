@@ -38,3 +38,7 @@ document.querySelectorAll('style').forEach(style => {
         style.remove();
     }
 });
+
+const toggle = document.getElementById('theme-toggle');
+
+toggle.textContent = isDark ? '☾' : '☀';
