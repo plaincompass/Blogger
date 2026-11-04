@@ -1,20 +1,16 @@
 console.log('PlainCompass');
 
-const customCss = document.querySelector(
-  'link[href*="plaincompass.github.io/Blogger/style.css"]'
-);
+document.querySelectorAll('style').forEach(style => {
 
-customCss.addEventListener("load", () => {
+    const css = style.textContent || '';
 
-    document.querySelectorAll("style").forEach(style => {
+    if (css.includes('visibility:hidden')) {
+        return;
+    }
 
-        if(style.innerHTML.includes("visibility:hidden")){
-            return;
-        }
-
-        style.remove();
-    });
-
-    document.documentElement.style.visibility = "visible";
-    document.documentElement.style.opacity = "1";
+    style.remove();
 });
+
+document.documentElement.style.visibility = 'visible';
+
+document.getElementById('pc-loading')?.remove();
