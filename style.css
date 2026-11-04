@@ -85,17 +85,14 @@ html{
   --content-width:680px;
 }
 
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#131416;
-    --card:#1b1d20;
-    --text:#ececec;
-    --sub:#9ea3aa;
-    --line:#2b2f34;
-    --accent:#c9b08b;
-
-    --shadow:none;
-  }
+html[data-theme="dark"]{
+  --bg:#131416;
+  --card:#1b1d20;
+  --text:#ececec;
+  --sub:#9ea3aa;
+  --line:#2b2f34;
+  --accent:#c9b08b;
+  --shadow:none;
 }
 
 /* =========================
