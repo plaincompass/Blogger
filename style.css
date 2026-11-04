@@ -441,7 +441,7 @@ td{
     counter-increment:postcount;
 }
 
-#recently li a::before{
+#recently li a .num{
     content:counter(postcount);
     flex-shrink:0;
 
