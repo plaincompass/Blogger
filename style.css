@@ -411,7 +411,7 @@ td{
     margin:0;
 }
 
-#recently li a{
+#recently li{
     display:flex;
     align-items:center;
     gap:14px;
@@ -425,7 +425,7 @@ td{
     overflow:hidden;
 }
 
-#recently li a:hover{
+#recently li:hover{
     transform:translateY(-2px);
     border-color:var(--accent);
     background:rgba(115,98,79,.06);
