@@ -1,0 +1,105 @@
+ :root {
+    /* Monet-like light mode */
+    --bg: #f3efe8;
+    --bg-2: #e7ddcf;
+    --panel: rgba(255, 255, 255, 0.42);
+    --panel-strong: #f8f3ese;
+    --text: #2d2a28;
+    --muted: #6f675f;
+    --border: rgba(75, 62, 50, 0.14);
+    --shadow: rgba(54, 42, 33, 0.12);
+
+    --sky: #dfeaf5;
+    --water: #bfd8e8;
+    --sage: #b7c9b0;
+    --lavender: #d9cfe7;
+    --ochre: #d7b66a;
+    --terracotta: #bf7b5b;
+    --rose: #d9a7a1;
+    --gold: #ead3a1;
+
+    --link: #4b5e6f;
+    --link-hover: #2e3f4d;
+
+    --button-bg: #f8f0e5;
+    --button-text: #2d2a28;
+    --button-border: rgba(77, 66, 59, 0.18);
+
+    --post-bg: rgba(255, 255, 255, 0.28);
+    --post-text: #2d2a28;
+    --heading: #2d2a28;
+  }
+
+  html[data-theme='dark'] {
+    /* Monet-like dark mode */
+    --bg: #1d1c1a;
+    --bg-2: #2a2825;
+    --panel: rgba(39, 35, 32, 0.8);
+    --panel-strong: #312d2a;
+    --text: #efe7df;
+    --muted: #c8bfb6;
+    --border: rgba(255, 255, 255, 0.1);
+    --shadow: rgba(0, 0, 0, 0.38);
+
+    --sky: #3a4a5c;
+    --water: #355d73;
+    --sage: #607a5c;
+    --lavender: #685d7a;
+    --ochre: #b9965d;
+    --terracotta: #b56a4d;
+    --rose: #8d5d6b;
+    --gold: #c9b57d;
+
+    --link: #d9e4f1;
+    --link-hover: #f4f4f4;
+
+    --button-bg: #2b2724;
+    --button-text: #f5efe7;
+    --button-border: rgba(255, 255, 255, 0.12);
+
+    --post-bg: rgba(36, 31, 28, 0.75);
+    --post-text: #f1e7df;
+    --heading: #f4ebdf;
+  }
+
+  /* 기본 적용 예시 */
+  body {
+    background:
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    color: var(--text);
+  }
+
+  .post,
+  .widget,
+  .sidebar-container,
+  .main,
+  .page_body {
+    background: var(--post-bg);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px var(--shadow);
+  }
+
+  a {
+    color: var(--link);
+  }
+
+  a:hover {
+    color: var(--link-hover);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading);
+  }
+
+  .post-body {
+    color: var(--post-text);
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: 1px solid var(--button-border);
+  }
