@@ -39,6 +39,37 @@ document.querySelectorAll('style').forEach(style => {
     }
 });
 
-const toggle = document.getElementById('theme-toggle');
+const themeToggle = document.getElementById('theme-toggle');
 
-toggle.textContent = isDark ? '☾' : '☀';
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '☾';
+} else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeToggle.textContent = '☀';
+}
+
+themeToggle.addEventListener('click', () => {
+
+    const isDark =
+        document.documentElement.getAttribute('data-theme') === 'dark';
+
+    if (isDark) {
+
+        document.documentElement.setAttribute('data-theme', 'light');
+
+        themeToggle.textContent = '☀';
+
+        localStorage.setItem('theme', 'light');
+
+    } else {
+
+        document.documentElement.setAttribute('data-theme', 'dark');
+
+        themeToggle.textContent = '☾';
+
+        localStorage.setItem('theme', 'dark');
+    }
+});
