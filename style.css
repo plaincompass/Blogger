@@ -8,7 +8,6 @@
     --muted: #6f675f;
     --border: rgba(75, 62, 50, 0.14);
     --shadow: rgba(54, 42, 33, 0.12);
-
     --sky: #dfeaf5;
     --water: #bfd8e8;
     --sage: #b7c9b0;
@@ -332,3 +331,9 @@
     margin: 0;
     padding: 0;
   }
+
+
+/* theme custom*/
+.Lfphtd{
+ display:none;
+}
