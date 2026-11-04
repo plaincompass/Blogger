@@ -22,3 +22,19 @@ document.querySelectorAll('style').forEach(style => {
         style.remove();
     }
 });
+
+
+
+document.documentElement.style.display = 'block';
+
+document.querySelectorAll('style').forEach(style => {
+
+    const css = style.textContent || '';
+
+    if (
+        css.includes('gc-bubbleDefault') ||
+        css.includes('pls-bubbleTop')
+    ) {
+        style.remove();
+    }
+});
