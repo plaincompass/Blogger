@@ -103,3 +103,232 @@
     color: var(--button-text);
     border: 1px solid var(--button-border);
   }
+
+  :root {
+    --base-size: 16px;
+    --svg-size: 10px;
+    --bg: #ffffff;
+    --text: #111111;
+    --muted: #666666;
+    --border: #eeeeee;
+    --link: #111111;
+    --surface: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    font: inherit;
+    vertical-align: baseline;
+    background: transparent;
+    color: inherit;
+    text-decoration: none;
+    list-style: none;
+    quotes: none;
+    box-shadow: none;
+  }
+
+  html {
+    font-size: var(--base-size);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    min-height: 100vh;
+  }
+
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  nav,
+  section,
+  summary {
+    display: block;
+  }
+
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  object,
+  embed {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+  }
+
+  svg,
+  svg * {
+    width: var(--svg-size);
+    height: var(--svg-size);
+    max-width: var(--svg-size);
+    max-height: var(--svg-size);
+    font-size: var(--svg-size);
+    line-height: 1;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: none;
+    background: transparent;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+  }
+
+  p,
+  h1, h2, h3, h4, h5, h6,
+  pre, code, blockquote, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    cursor: pointer;
+  }
+
+  strong, b {
+    font-weight: 700;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  .widget.Attribution,
+  .Attribution,
+  .blogger,
+  .blogger-logo,
+  .svg-icon-24.blogger-logo,
+  .image-attribution,
+  #blogger-theme-toggle {
+    display: none !important;
+  }
+
+  #outer-wrapper,
+  #main-wrapper,
+  .main,
+  .main-container,
+  .page_body,
+  .content-wrapper,
+  .Page {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .Header,
+  .Blog,
+  .widget,
+  .post-outer,
+  .post,
+  .sidebar-container,
+  .footer {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .post {
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .post-title,
+  .post-title a {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .sidebar-container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .widget-content {
+    margin: 0;
+    padding: 0;
+  }
