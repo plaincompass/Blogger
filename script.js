@@ -13,6 +13,7 @@ document.getElementById('pc-loading')?.remove();
 document.querySelectorAll('style').forEach(style => {
 
     const css = style.textContent || '';
+    console.log(css);
 
     if (
         css.includes('gc-bubbleDefault') ||
